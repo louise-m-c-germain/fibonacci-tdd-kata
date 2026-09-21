@@ -17,12 +17,10 @@ def fibonacci(n):
     """ Return the n-th fibonacci number
         Reminder: the Fibonacci sequence is defined by  F(0) = 0d  F(1) = 1   F(n) = F(n−1) + F(n−2)    for n ≥ 2
         """
-    if n==0 :
-        return(0)
-    elif n==1 :
-        return(1)
-    else : 
-        return(fibonacci(n-1)+fibonacci(n-2))
+    a,b = 0,1
+    for i in range(n):
+        a,b = b,a+b
+    return(a)
 
 
 @app.cell

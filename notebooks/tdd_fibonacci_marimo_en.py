@@ -13,7 +13,7 @@ def _():
 
 
 @app.function
-#Code find on the website Stack Overflow 
+# Code find on the website Stack Overflow
 
 def fibonacci(n: int, f0: int = 0, f1: int = 1) -> int:
     """
@@ -38,20 +38,17 @@ def fibonacci(n: int, f0: int = 0, f1: int = 1) -> int:
 
 @app.cell
 def _(pytest):
-    #List of tests to pass
+    # List of tests to pass
 
-    @pytest.mark.parametrize("n,expected",[(0,0),(1,1),(2,1),(6,8),(10,55)])
-
-    def test_fibonacci(n,expected):
-        assert fibonacci(n)==expected
-
-
+    @pytest.mark.parametrize("n,expected", [(0, 0), (1, 1), (2, 1), (6, 8), (10, 55)])
+    def test_fibonacci(n, expected):
+        assert fibonacci(n) == expected
 
 
 @app.cell
 def _(mo):
-    #Widget
-    n_slider = mo.ui.slider(0,50)
+    # Widget
+    n_slider = mo.ui.slider(0, 50)
     n_slider
     return (n_slider,)
 
@@ -63,13 +60,11 @@ def _(mo, n_slider):
 
 @app.cell
 def _(pytest):
-    #Aditional unit test for large value
+    # Aditional unit test for large value
 
-    @pytest.mark.parametrize("n",[1000,10**4,10**5,10**6,10**7])
-
+    @pytest.mark.parametrize("n", [1000, 10**4, 10**5, 10**6, 10**7])
     def test_fibonacci_huge_numbers(n):
         assert fibonacci(n) > 0
-
 
 
 if __name__ == "__main__":

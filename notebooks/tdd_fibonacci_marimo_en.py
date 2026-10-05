@@ -46,7 +46,6 @@ def _(pytest):
         assert fibonacci(n)==expected
 
 
-    return
 
 
 @app.cell
@@ -60,7 +59,6 @@ def _(mo):
 @app.cell
 def _(mo, n_slider):
     mo.md(f"F({n_slider.value}) = {fibonacci(n_slider.value)}")
-    return
 
 
 @app.cell
@@ -72,7 +70,6 @@ def _(pytest):
     def test_fibonacci_huge_numbers(n):
         assert fibonacci(n) > 0
 
-    return
 
 
 if __name__ == "__main__":
